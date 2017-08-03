@@ -1,0 +1,267 @@
+@import "../css/reset.css"
+@import "../../style/common.sass"
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"
+
+
+body
+	height: 100vh
+	width: 100%
+	background-color: white
+	background-image: url("../images/bg.jpg")
+
+img
+	@extend .img-responsive
+
+.parallax-window 
+	min-height: 900px
+	background: transparent
+
+@keyframes floatting
+	0%
+		transform: translateX(0)
+		opacity: 1
+	50% 
+		transform: translateX(20%)
+	50.001%
+		transform: translateX(-10%)
+		opacity: 0 
+
+.cloud
+	position: absolute
+	top: 20%
+	overflow: hidden
+	img
+		width: 150%
+		height: auto
+		animation: floatting 10s ease infinite 5s
+	
+// 選單
+.navbar
+	@extend %flexbox
+	+justify-content(center)
+	position: fixed
+	width: 100%
+	top: 0
+	z-index: 1000
+	background-color: rgba(255, 255, 255, 0.8)
+	.nav
+		@extend %flexbox
+		@extend .container
+		+flex-dir(row)
+		+justify-content(center)
+		+align-items(center) 
+		+pxTorem(22px)
+		+boxSizing(border-box)
+		height: 60px
+		color: #9a9393
+		margin: 0 auto
+		li
+			+boxSizing(border-box)
+			padding: 10px
+			cursor: pointer
+			a
+				color: black
+				outline: none
+				border-bottom: 3px solid rgba(255, 255, 255, 0)
+				&:hover
+					border-bottom: 3px solid yellow
+					background-color: rgba(255, 255, 255, 0.0)
+				&:focus
+					background-color: rgba(255, 255, 255, 0.0)
+
+
+// 內容
+.index, .skills, .other, .about-me
+	@extend %flexbox
+	+justify-content(center)
+	position: relative
+	height: 950px
+
+// 首頁
+.index
+	@extend .container
+	background-image: url('../images/index_01.png')
+	background-repeat: no-repeat
+	background-position: center 
+
+	.index-word
+		position: absolute
+		text-align: center
+		font-size: 18px
+		line-height: 2.3
+		left: 16px
+		top: 280px
+		text-shadow: 1px 1px 2px #fff
+
+
+// 技能
+
+.skills
+	+boxSizing(border-box)
+	+flex-dir(column)
+	padding: 0 200px
+	.skills-img
+		@extend .container
+		height: 483px
+		width: 100%
+		background-image: url('../images/skills_03.png')
+		background-repeat: no-repeat
+		background-position: center 
+
+	.skills-block
+		@extend .container
+		+pxTorem(16px)
+		+boxSizing(border-box)
+		width: 100%
+		padding: 20px
+		line-height: 2
+		bottom: 100px
+		border-top: 1px solid #9a9393
+
+		.skills-list
+			+borderRadius(4px)
+			+boxSizing(border-box)
+			padding: 20px
+			min-width: 240px
+			border: 1px solid #ececec
+			margin-right: 10px
+			
+		.skills-title
+			+pxTorem(18px)
+			+boxSizing(border-box)
+			font-weight: bold
+			border-left: 3px solid yellow
+			padding-left: 10px
+			line-height: 1
+			margin-bottom: 10px
+		.icon
+			width: 26px
+			height: 26px
+			margin-right: 10px
+			display: inline-block
+			vertical-align: middle
+
+		.skills-content
+			@extend %flexbox
+			+flex-dir(column)
+			+boxSizing(border-box)
+			padding: 0 15px
+			color: #595959
+
+//專案列表
+.gallery
+	@extend %flexbox
+	@extend .container-fluid
+	+flex-dir(column)
+	+justify-content(center)
+	+boxSizing(border-box)
+	padding-top: 90px
+	height: auto
+	position: relative
+
+	.gallery-block
+		@extend .container
+		height: 354px
+		background-image: url('../images/gallery.png')
+		background-repeat: no-repeat
+		background-position: center 
+		
+
+	.gallery-category
+		@extend %flexbox
+		+pxTorem(18px)
+		+flex-dir(row)
+		+justify-content(center)
+		margin-top: 15px
+		li
+			+boxSizing(border-box)
+			+borderRadius(4px)
+			margin: 0 10px
+			padding: 5px 15px
+			cursor: pointer
+			&:hover
+				background-color: yellow
+				transition:  all .7s
+			&.active
+				background-color: yellow
+				transition:  all .7s
+	.gallery-img2
+		position: absolute
+		z-index: 100
+		left: 150px
+		bottom: 0
+	
+	.box-block
+		@extend %flexbox
+		@extend .container-fluid
+		+flex-wrap(wrap)
+		padding: 0 160px
+	.box
+		+boxSizing(border-box)
+		height: 170px
+		margin: 10px 0
+		position: relative 
+		overflow: hidden
+		.mask
+			visibility: hidden 
+		a
+			cursor: pointer
+			&:hover
+				.mask
+					@extend %flexbox
+					+align-items(center) 
+					+justify-content(center)
+					visibility: visible
+					position: absolute
+					top: 0
+					left: 0
+					width: 100%
+					height: 100%
+					background-color: rgba(0, 0 ,0,0.7)
+					transition:  all .4s
+				.caption
+					@extend %flexbox
+					+flex-dir(column)
+					+pxTorem(16px)
+					letter-spacing: 2px
+					font-weight: 100
+					color: white
+					text-align: center
+				button
+					+pxTorem(16px)
+					+borderRadius(4px)
+					margin-top: 10px
+					outline: none
+					border: 1px solid yellow
+					background-color: yellow
+					color: black
+
+
+//關於我		
+.about-me-img
+	position: absolute
+	z-index: 100
+	left: 150px
+	bottom: 0
+
+
+// dialog
+.modal
+	position: fixed
+	top: 0
+	z-index: 8888
+	background-color: rgba(0, 0, 0, 0.7)
+	width: 100%
+	height: 100%
+	overflow-y: auto
+	display: none
+.popup
+	position: relative
+	margin: 0 auto
+	width: 1200px
+	top: 0
+	z-index: 8889
+	height: auto
+
+
+			

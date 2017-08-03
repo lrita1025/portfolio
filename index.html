@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="src/css/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="src/js/jquery.easing.min.js"></script>
+    <script src="src/js/jquery.shuffle.js"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="cloud">
+        <img src="src/images/cloud.png" alt="">
+    </div>
+
+    <div class="navbar">
+        <ul class="nav navbar-nav">
+            <li>
+                <a class="page-scroll" href=".skills">Skills</a>
+            </li>
+            |
+            <li>
+                <a class="page-scroll" href=".gallery">Gallery</a>
+            </li>
+            |
+            <li>
+                <a class="page-scroll" href=".about-me">About me </a>
+            </li>
+            |
+            <li>
+                <a class="page-scroll" href=".contact-me">About me </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="index">
+        <div class="index-word">
+            <p>刀子嘴豆腐心的女人。</p>
+            <p>喜歡嘗試各種新事物</p>
+            <p>興趣從繪畫、做菜、動漫、運動 到講黃色笑話。</p>
+            <p>小時候想當漫畫家，長大後念了廣告系，</p>
+            <p>第一份工作做了網頁設計,</p>
+            <p>被工程師唬怕了,誤入歧途的做了前端工程師,</p>
+            <p>持續為自畫自產網頁之路努力。</p>
+        </div>
+    </div>
+
+
+    <div class="skills">
+        <div class="skills-img">
+        </div>
+        <div class="skills-block">
+            <div class="col-lg-3">
+                <div class="skills-list">
+                    <div class="skills-title">Graphics / 圖像設計</div>
+                    <div class="skills-content">
+                        <div>
+                            <span class="icon"><img src="src/images/icon/PS.svg" alt=""></span>Photoshop
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/Ai.svg" alt=""></div>Illustrator
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/sketch.png" alt=""></div>Sketch
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/zeplin.png" alt=""></div>Zeplin
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="skills-list">
+                    <div class="skills-title">Programing / 程式語言</div>
+                    <div class="skills-content">
+                        <div>
+                            <div class="icon"><img src="src/images/icon/HTML5.png" alt=""></div>Html5
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/css3.png" alt=""></div>CSS3
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/sass.svg" alt=""></div>Sass
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/javascript.png" alt=""></div>Javascript
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/jQuery.png" alt=""></div>jQuery
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="skills-list">
+                    <div class="skills-title">Motion / 動態影像</div>
+                    <div class="skills-content">
+                        <div>
+                            <div class="icon"><img src="src/images/icon/flash.jpg" alt=""></div>Flash
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/AE.svg" alt=""></div>After Effects
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/Pr.png" alt=""></div>Premiere
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="skills-list">
+                    <div class="skills-title">Other / 其他</div>
+                    <div class="skills-content">
+                        <div>
+                            <div class="icon"><img src="src/images/icon/gulp.png" alt=""></div>Gulp
+                        </div>
+                        <div>
+                            <div class="icon"><img src="src/images/icon/git.png" alt=""></div>Git
+                        </div>
+                        <div>手繪</div>
+                        <div>書法</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="gallery">
+        <div class="gallery-block">
+        </div>
+        <ul class="gallery-category">
+            <li class="filter-button active" data-filter="all">All</li>
+            <li class="filter-button" data-filter="uiux">UI/UX Design</li>
+            <li class="filter-button">Web</li>
+            <li class="filter-button" data-filter="edm">Edm</li>
+            <li class="filter-button" data-filter="games">Games</li>
+            <li class="filter-button">Other</li>
+        </ul>
+        <div class="box-block">
+            <div class="box-row" id="grid">
+
+            </div>
+        </div>
+    </div>
+    <div class="gallery-img2">
+        <img src="src/images/gallery_img2_27.png" alt="">
+    </div>
+    </div>
+
+
+    <div class="about-me">
+        <div class="about-me-img">
+            <img src="src/images/about_me_35.png" alt="">
+        </div>
+    </div>
+
+
+    <footer></footer>
+    <div class="modal">
+        <div class="closeBtn">X</div>
+        <div class="popup">
+            <img src="" alt="">
+        </div>
+    </div>
+    <div class="gallery-temp">
+        <div class="col-lg-3">
+            <div class="box" data-img="">
+                <a href="javascript:;">
+                    <img src="">
+                    <div class="mask">
+                        <div class="caption">
+                            <span></span>
+                            <button>Read more</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="src/js/main.js"></script>
+</body>
+
+</html>

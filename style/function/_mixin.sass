@@ -1,0 +1,137 @@
+// HTML setting
+html
+    font-size: $html-default-font-size
+
+// body basic setting
+body
+    // +pxTorem($font-size-base)
+    // background: $body-bg
+    // color: $body-color
+    // font-family: $body-font-family
+    line-height: 1.6
+    word-wrap: break-word
+    word-break: break-all
+
+
+// Usage: +pxTorem(26px)
+@mixin pxTorem($px)
+
+    font-size: $px
+    //font-size: $px / $html-default-font-size + rem
+
+@function pxTorem($px)//$px为需要转换的字号
+    @return $px / $browser-default-font-size * 1rem
+
+// Usage: +boxSizing(border-box)
+@mixin boxSizing($box-model)
+    box-sizing: $box-model
+
+
+// Usage: +clearfix
+@mixin clearfix()
+
+    zoom: 1
+
+    &::before,
+    &::after
+        display: table
+        clear: both
+        content: ""
+
+// Usage: +boxSizing(border-box)
+@mixin boxSizing($box-model)
+
+    box-sizing: $box-model
+
+// Usage: @include border-radius(4px)
+@mixin borderRadius($radius)
+
+    border-radius: $radius
+    background-clip: padding-box  // stops bg color from leaking outside the border:
+
+// Usage: @include box-shadow(1px, 1px, 4px, 4px, $gray-dark, false)
+@mixin boxShadow($top, $left, $blur, $size, $color, $inset: false)
+
+    @if $inset
+
+        box-shadow: inset $top $left $blur $size $color
+
+    @else
+
+        box-shadow: $top $left $blur $size $color
+
+// 待調整
+// Usage: +isStartAnimation($light-box-start-top, $light-box-end-top)
+@mixin isShowAnimation($light-box-start-top, $light-box-end-top)
+
+    animation: is-show 1s
+
+    @keyframes is-show
+        0%
+            top: $light-box-start-top
+            opacity: 0
+
+        100%
+            top: $light-box-end-top
+            opacity: 1
+
+// 待調整
+// Usage: +isEndAnimation($light-box-start-top, $light-box-end-top)
+@mixin isHideAnimation($light-box-start-top, $light-box-end-top)
+
+    animation: is-hide 1s
+
+    @keyframes is-hide
+        0%
+            top: $light-box-end-top
+            opacity: 1
+
+        100%
+            top: $light-box-start-top
+            opacity: 0
+
+// Usage: +box-sizing(border-box)
+@mixin isTipsAnimation($time)
+
+    animation: isTip $time
+
+    @keyframes isTip
+
+        0%
+            opacity: 0
+
+        20%
+            opacity: 1
+
+        80%
+            opacity: 1
+
+        100%
+            opacity: 0
+
+// font-size
+h1
+    @include pxTorem(5rem)
+
+h2
+    @include pxTorem(4.2rem)
+
+h3
+    @include pxTorem(3.6rem)
+
+h4
+    @include pxTorem(3rem)
+
+h5
+    @include pxTorem(2.4rem)
+
+h6
+    @include pxTorem(1.5rem)
+
+a
+    cursor: pointer
+    &.tab-link
+
+        &:link, :visited, :hover, :active
+            // color: $body-color
+            text-decoration: none
